@@ -32,6 +32,11 @@ function obj.mediaKeyCallback(event)
     local data = event:systemKey()
     local roonApp = hs.application.applicationsForBundleID('com.roon.Roon')[1]
 
+    -- ignore when Roon isn't running
+    if roonApp == nil then
+        return false, nil
+    end
+
     -- ignore everything but media keys
     if data["key"] ~= "PLAY" and data["key"] ~= "FAST" and data["key"] ~= "REWIND" then
         return false, nil

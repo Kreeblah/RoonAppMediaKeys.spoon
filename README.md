@@ -1,5 +1,5 @@
 # RoonAppMediaKeys.spoon
-Hammerspoon Spoon for sending play/pause/previous/next keys to Roon
+Hammerspoon Spoon for sending play/prev/next/mute/volup/voldown keys to Roon
 
 This is based on the Spoon to [send media key presses to Apple's Music.app](https://github.com/Hammerspoon/Spoons/tree/master/Source/MusicAppMediaFix.spoon), but modified to send them to [Roon](https://roon.app) instead.
 
@@ -12,7 +12,7 @@ git clone https://github.com/Kreeblah/RoonAppMediaKeys.spoon.git ~/.hammerspoon/
 And then add the following to your `init.lua`:
 
 ```
--- Send play/pause/next/back to Roon
+-- Send play/prev/next/mute/volup/voldown to Roon
 hs.loadSpoon("RoonAppMediaKeys")
 spoon.RoonAppMediaKeys:start()
 ```

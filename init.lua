@@ -1,6 +1,6 @@
 --- === RoonAppMediaKeys ===
 ---
---- Override macOS behaviour and send all media keys (play/prev/next) to Roon.app
+--- Override macOS behaviour and send all media keys (play/prev/next/mute/volup/voldown) to Roon.app
 local obj = { __gc = true }
 --obj.__index = obj
 setmetatable(obj, obj)
@@ -37,8 +37,8 @@ function obj.mediaKeyCallback(event)
         return false, nil
     end
 
-    -- ignore everything but media keys
-    if data["key"] ~= "PLAY" and data["key"] ~= "FAST" and data["key"] ~= "REWIND" then
+    -- ignore everything but media keys (play/prev/next/mute/volup/voldown)
+    if data["key"] ~= "PLAY" and data["key"] ~= "FAST" and data["key"] ~= "REWIND" and data["key"] ~= "MUTE" and data["key"] ~= "SOUND_UP" and data["key"] ~= "SOUND_DOWN" then
         return false, nil
     end
 
@@ -50,6 +50,12 @@ function obj.mediaKeyCallback(event)
             hs.eventtap.keyStroke({"cmd"}, "k", 0, roonApp)
         elseif data["key"] == "REWIND" then
             hs.eventtap.keyStroke({"cmd"}, "j", 0, roonApp)
+        elseif data["key"] == "MUTE" then
+            hs.eventtap.keyStroke({"ctrl"}, "m", 0, roonApp)
+        elseif data["key"] == "SOUND_UP" then
+            hs.eventtap.keyStroke({"cmd"}, "up", 0, roonApp)
+        elseif data["key"] == "SOUND_DOWN" then
+            hs.eventtap.keyStroke({"cmd"}, "down", 0, roonApp)
         end
     end
 

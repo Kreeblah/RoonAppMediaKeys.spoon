@@ -39,8 +39,8 @@
       }
     ],
     "Variable": [],
-    "desc": "Override macOS behaviour and send all media keys (play/prev/next) to Roon.app",
-    "doc": "Override macOS behaviour and send all media keys (play/prev/next) to Roon.app",
+    "desc": "Override macOS behaviour and send all media keys (play/prev/next/mute/volup/voldown) to Roon.app",
+    "doc": "Override macOS behaviour and send all media keys (play/prev/next/mute/volup/voldown) to Roon.app",
     "items": [
       {
         "def": "RoonAppMediaKeys:start()",

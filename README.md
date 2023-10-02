@@ -3,6 +3,8 @@ Hammerspoon Spoon for sending play/prev/next/mute/volup/voldown keys to Roon whe
 
 This is based on the Spoon to [send media key presses to Apple's Music.app](https://github.com/Hammerspoon/Spoons/tree/master/Source/MusicAppMediaFix.spoon), but modified to send them to [Roon](https://roon.app) instead.
 
+**Note:** This uses the [Roon keyboard shortcuts](https://help.roonlabs.com/portal/en/kb/articles/keyboard-shortcuts) to control Roon, which means it uses the spacebar for play/pause operations.  This means that if you have the cursor in a text field, you'll probably get in there if you hit play.  To avoid this, just avoid having a text entry box in Roon selected.
+
 To use it, clone the repository into your Spoons directory:
 
 ```

@@ -12,7 +12,17 @@ git clone https://github.com/Kreeblah/RoonAppMediaKeys.spoon.git ~/.hammerspoon/
 And then add the following to your `init.lua`:
 
 ```
--- Send play/prev/next/mute/volup/voldown to Roon
+-- Send play/prev/next to Roon
 hs.loadSpoon("RoonAppMediaKeys")
 spoon.RoonAppMediaKeys:start()
 ```
+
+If you want to add the mute and volume keys to your Roon controls, you can pass `true` to the `start()` method:
+
+```
+-- Send play/prev/next/mute/volup/voldown to Roon
+hs.loadSpoon("RoonAppMediaKeys")
+spoon.RoonAppMediaKeys:start(true)
+```
+
+Additionally, pressing Shift + Ctrl + Opt + R at any time  will toggle between having Roon capture mute and the volume keys and letting macOS handle them.

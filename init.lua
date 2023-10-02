@@ -42,6 +42,10 @@ function obj.mediaKeyCallback(event)
         return false, nil
     end
 
+    if not roonCaptureVolumeControls and (data["key"] == "MUTE" or data["key"] == "SOUND_UP" or data["key"] == "SOUND_DOWN") then
+        return false, nil
+    end
+
     -- handle action
     if data["down"] == false or data["repeat"] == true then
         if data["key"] == "PLAY" then
@@ -68,11 +72,17 @@ end
 --- Starts the hs.eventtap that powers this Spoon
 ---
 --- Parameters:
----  * None
+---  * A boolean indicating whether to capture the volume controls
 ---
 --- Returns:
 ---  * The RoonAppMediaKeys object
-function obj:start()
+function obj:start(captureVolumeControls)
+    if captureVolumeControls == nil then
+        roonCaptureVolumeControls = false
+    else
+        roonCaptureVolumeControls = captureVolumeControls
+    end
+    hs.hotkey.bind({"shift", "ctrl", "option"}, "r", function() roonCaptureVolumeControls = not roonCaptureVolumeControls end)
     if self.eventtap:isEnabled() ~= true then
         self.eventtap:start()
     end
@@ -89,6 +99,8 @@ end
 --- Returns:
 ---  * The RoonAppMediaKeys object
 function obj:stop()
+    roonCaptureVolumeControls = nil
+    hs.hotkey.deleteAll({"shift", "ctrl", "option"}, "r")
     if self.eventtap:isEnabled() then
         self.eventtap:stop()
     end

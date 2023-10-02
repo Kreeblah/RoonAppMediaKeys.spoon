@@ -13,7 +13,7 @@
         "doc": "Starts the hs.eventtap that powers this Spoon\n\nParameters:\n * None\n\nReturns:\n * The RoonAppMediaKeys object",
         "name": "start",
         "parameters": [
-          " * None"
+          " * A boolean indicating whether to have Roon capture the mute and volume keys"
         ],
         "returns": [
           " * The RoonAppMediaKeys object"

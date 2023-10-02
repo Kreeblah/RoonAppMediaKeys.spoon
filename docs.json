@@ -1,0 +1,81 @@
+[
+  {
+    "Command": [],
+    "Constant": [],
+    "Constructor": [],
+    "Deprecated": [],
+    "Field": [],
+    "Function": [],
+    "Method": [
+      {
+        "def": "RoonAppMediaKeys:start()",
+        "desc": "Starts the hs.eventtap that powers this Spoon",
+        "doc": "Starts the hs.eventtap that powers this Spoon\n\nParameters:\n * None\n\nReturns:\n * The RoonAppMediaKeys object",
+        "name": "start",
+        "parameters": [
+          " * None"
+        ],
+        "returns": [
+          " * The RoonAppMediaKeys object"
+        ],
+        "signature": "RoonAppMediaKeys:start()",
+        "stripped_doc": "",
+        "type": "Method"
+      },
+      {
+        "def": "RoonAppMediaKeys:stop()",
+        "desc": "Stops the hs.eventtap that powers this Spoon",
+        "doc": "Stops the hs.eventtap that powers this Spoon\n\nParameters:\n * None\n\nReturns:\n * The RoonAppMediaKeys object",
+        "name": "stop",
+        "parameters": [
+          " * None"
+        ],
+        "returns": [
+          " * The RoonAppMediaKeys object"
+        ],
+        "signature": "RoonAppMediaKeys:stop()",
+        "stripped_doc": "",
+        "type": "Method"
+      }
+    ],
+    "Variable": [],
+    "desc": "Override macOS behaviour and send all media keys (play/prev/next) to Roon.app",
+    "doc": "Override macOS behaviour and send all media keys (play/prev/next) to Roon.app",
+    "items": [
+      {
+        "def": "RoonAppMediaKeys:start()",
+        "desc": "Starts the hs.eventtap that powers this Spoon",
+        "doc": "Starts the hs.eventtap that powers this Spoon\n\nParameters:\n * None\n\nReturns:\n * The RoonAppMediaKeys object",
+        "name": "start",
+        "parameters": [
+          " * None"
+        ],
+        "returns": [
+          " * The RoonAppMediaKeys object"
+        ],
+        "signature": "RoonAppMediaKeys:start()",
+        "stripped_doc": "",
+        "type": "Method"
+      },
+      {
+        "def": "RoonAppMediaKeys:stop()",
+        "desc": "Stops the hs.eventtap that powers this Spoon",
+        "doc": "Stops the hs.eventtap that powers this Spoon\n\nParameters:\n * None\n\nReturns:\n * The RoonAppMediaKeys object",
+        "name": "stop",
+        "parameters": [
+          " * None"
+        ],
+        "returns": [
+          " * The RoonAppMediaKeys object"
+        ],
+        "signature": "RoonAppMediaKeys:stop()",
+        "stripped_doc": "",
+        "type": "Method"
+      }
+    ],
+    "name": "RoonAppMediaKeys",
+    "stripped_doc": "",
+    "submodules": [],
+    "type": "Module"
+  }
+]

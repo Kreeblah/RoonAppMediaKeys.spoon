@@ -36,6 +36,11 @@ function obj.roonHotkey()
         return
     else
         roonCaptureVolumeControls = not roonCaptureVolumeControls
+        if not roonCaptureVolumeControls then
+            hs.alert("Disabling Roon volume control capture.")
+        else
+            hs.alert("Enabling Roon volume control capture.")
+        end
     end
 end
 

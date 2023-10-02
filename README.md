@@ -25,4 +25,4 @@ hs.loadSpoon("RoonAppMediaKeys")
 spoon.RoonAppMediaKeys:start(true)
 ```
 
-Additionally, pressing Shift + Ctrl + Opt + R at any time  will toggle between having Roon capture mute and the volume keys and letting macOS handle them.
+Additionally, pressing Shift + Ctrl + Opt + R at any time while Roon is running will toggle between having Roon capture mute and the volume keys and letting macOS handle them.  If Roon is not running, that key combo will launch Roon instead.

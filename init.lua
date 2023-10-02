@@ -28,6 +28,17 @@ function obj:init()
     self.eventtap = hs.eventtap.new({hs.eventtap.event.types.systemDefined}, self.mediaKeyCallback)
 end
 
+function obj.roonHotkey()
+    local roonApp = hs.application.applicationsForBundleID('com.roon.Roon')[1]
+
+    if roonApp == nil then
+        hs.application.launchOrFocusByBundleID('com.roon.Roon')
+        return
+    else
+        roonCaptureVolumeControls = not roonCaptureVolumeControls
+    end
+end
+
 function obj.mediaKeyCallback(event)
     local data = event:systemKey()
     local roonApp = hs.application.applicationsForBundleID('com.roon.Roon')[1]
@@ -82,7 +93,7 @@ function obj:start(captureVolumeControls)
     else
         roonCaptureVolumeControls = captureVolumeControls
     end
-    hs.hotkey.bind({"shift", "ctrl", "option"}, "r", function() roonCaptureVolumeControls = not roonCaptureVolumeControls end)
+    hs.hotkey.bind({"shift", "ctrl", "option"}, "r", function() obj.roonHotkey() end)
     if self.eventtap:isEnabled() ~= true then
         self.eventtap:start()
     end
